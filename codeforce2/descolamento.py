@@ -1,0 +1,5 @@
+s = int(input())
+v = int(input())
+horas = int(s // v)
+minutos = int((s % v) * 60 / v)
+print(f"{horas:02}:{minutos:02}")
