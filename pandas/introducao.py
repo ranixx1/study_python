@@ -1,56 +1,53 @@
 import pandas as pd
-#dafaframes 
+
+# DataFrame de exemplo
 dados = {
-    "Nome":["Ranilton","Lucas","Leonardo"],
-    "Idade":[19,25,22],
+    'Id': ["1", "2","3"],
+    "Nome": ["Ranilton", "Lucas", "Leonardo"],
+    "Idade": [19, 25, 22],
+    "Salario": [3000, 6000, 4500]
 }
-df=pd.DataFrame(dados)
-df
+df = pd.DataFrame(dados)
 
-#series
+# Series de exemplo
+s = pd.Series([10, 20, 30])
 
-s=pd.Series([10,20,30])
-s
+# Imprimindo DataFrame
 
-#lendo tabelas
+# Lendo arquivos
+# di = pd.read_csv('planilha.csv')
+# di_df = pd.read_excel('planilha.xlsx', sheet_name='nome')
 
-di=pd.read_csv('planilha.csv')
-di
-#excel
-diex=pd.read_excel('planilha.xlsx', sheet_name='nome')
-diex
+# Manipulação básica
+print(df.head())      # 5 primeiras linhas
+print(df.tail())      # 5 últimas linhas
 
-#manipulação basica de dados
-df.head() #5 primeiras linhas
-df.tail() #5 ultimas linhas
+# Colunas específicas
+print(df[['Nome', 'Idade']])
+print(df['Idade'])
 
-#colunas especificas
-df[['Nome', 'Idade']]
-df['Idade',]
+# Filtros booleanos
+print(df['Idade'] > 30)                    # Série booleana
+print(df[df['Idade'] > 30])               # Filtrando por idade
+print(df[df['Salario'] > 5000])           # Filtrando por salário
 
-#series booleanas e filtros
-df['idade'>30] #serie booleana de true e false 
-df[df['idade']>30] #retorna todos os funcionarios com idade maior que 30
-df[df['Salario']>5000] #retorna todos os funcionarios com salario maior que 5000
+# Filtros combinados
+filtro_maior_que30 = df['Idade'] > 30
+filtro_mais_de_5mil = df['Salario'] > 5000
+print(df[filtro_maior_que30 & filtro_mais_de_5mil])
 
-#combinando filtros
-filtro_maior_que30 = df['idade'>30]
-filtro_mais_de_5mil = df['Salario'>5000]
-df[filtro_maior_que30 & filtro_mais_de_5mil]
+# Criando nova coluna
+df['Salario Anual'] = df['Salario'] * 12
 
-#criando 
-df['Salario Anual'] = df['Salario']*12
-df
-
-#removendo colunas
+# Removendo colunas
 df = df.drop('Salario Anual', axis=1)
-df
 
-#resumindo dados
-df.info() #resumo infomtativo(tipo de dado e se tem null)
-df.describe() #resumo esstatico
-df['Salario'].sum() #soma de salario
-df['Salario'].mean() # media de salario
+# Resumos
+df.info()
+print(df.describe())
+print("Soma dos salários:", df['Salario'].sum())
+print("Média salarial:", df['Salario'].mean())
 
-#limpeza de dados
-df.dropna()
+# Limpeza de dados
+df = df.dropna()
+
