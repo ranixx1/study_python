@@ -1,6 +1,0 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-
-df = pd.read_excel('pandas/Vendas.xlsx')
-#tamanho da figura
-plt.figure(figsize=(15, 10))
