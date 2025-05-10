@@ -1,3 +1,4 @@
+#10
 valor = int(input())
 print(valor)
 
