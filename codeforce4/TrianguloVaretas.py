@@ -1,3 +1,11 @@
-# dados os comprimentos de quatro varetas, é ou não é possível selecionar três varetas, dentre as quatro, e formar um triângulo.
 
-a,b,c,d = map(int, input().split())
+a, b, c, d = map(int, input().split())
+
+# Verifica todas as combinações possíveis de 3 varetas
+if (a + b > c and a + c > b and b + c > a) or \
+   (a + b > d and a + d > b and b + d > a) or \
+   (a + c > d and a + d > c and c + d > a) or \
+   (b + c > d and b + d > c and c + d > b):
+    print("S")
+else:
+    print("N")
