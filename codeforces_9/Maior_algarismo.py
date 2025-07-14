@@ -2,7 +2,10 @@ def soma_algarismos(numero):
     soma = 0
     for digito_str in str(numero):
         soma += int(digito_str)
-    return soma
+    if soma >= 10:
+        return soma_algarismos(str(soma))
+    else:
+        return soma
 
 while True:
     N1, N2 = map(int, input().split())
@@ -14,6 +17,9 @@ while True:
     soma2 = soma_algarismos(N2)
 
     if soma1 > soma2:
-        print(soma1)
+        print("1")
+    elif soma2 > soma1:
+        print("2")
     else:
-        print(soma2)
+        print("0")
+    
