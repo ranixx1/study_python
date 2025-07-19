@@ -1,9 +1,12 @@
-n = int(input())
-i=0
-soma=0
-for i in range(i, n):
-    m=int(input())
-    soma=soma+m
+N = int(input())
+measurements = [int(input()) for _ in range(N)]
 
-media= soma//n
-print(media)
+average = sum(measurements) // N
+
+lower_bound = int(average * 0.9)
+upper_bound = int(average * 1.1)
+
+count = sum(1 for b in measurements if b < lower_bound or b > upper_bound)
+
+print(average)
+print(count)
