@@ -1,13 +1,22 @@
-Qtd_letras = int(input())
-palavra = input()
-tamanho_palavra = len(palavra)
+N = int(input())
+s = input()
 
-qtd_repete = 0
+total_a_em_monotomas = 0
+i = 0
 
-for i in range(tamanho_palavra-1):
-    if palavra[i] == palavra[i+1]:
-        qtd_repete+=1
-        
+while i < N:
+    current_char = s[i]
+    j = i
+    
+    while j + 1 < N and s[j + 1] == current_char:
+        j += 1
+    
+    monotoma_length = j - i + 1
+    
+    if monotoma_length >= 2:
+        if current_char == 'a':
+            total_a_em_monotomas += monotoma_length
+            
+    i = j + 1 
 
-print(qtd_repete)
-
+print(total_a_em_monotomas)
