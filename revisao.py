@@ -1,13 +1,9 @@
-def soma_impares(lista):
-    if len(lista)== 0:
-        return []
-        
+def soma_algarismos(n):
+    if n == 0:
+        return n
     else:
-        r = soma_impares(lista[:-1])
-        if lista[-1]%2!=0:
-            r.append(lista[-1])
-        return r
+        return (n%10+soma_algarismos(n//10))
+    
+n = int(input())
+print(soma_algarismos(n))
 
-lista = list(map(int,input().split()))
-lista.append(12)
-print(sum(soma_impares(lista)))
