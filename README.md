@@ -12,9 +12,9 @@ Welcome to the **Python Exercises Repository**! This repository is dedicated to 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/ranixx1/pythonTDS.git
+    git clone https://github.com/ranixx1/sttudy_python.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd pythonTDS
+    cd study_python
     ```
