@@ -1,6 +1,6 @@
 # Python Exercises Repository
 
-Welcome to the **Python Exercises Repository**! This repository is dedicated to solving Python programming exercises.
+Welcome to the **Python Repository**! This repository is dedicated to solving Python programming exercises.
 
 ## Features
 
