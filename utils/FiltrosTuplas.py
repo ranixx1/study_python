@@ -1,3 +1,5 @@
+# PRODUTO || CATEGORIA || VALOR || STATUS
+
 pedidos = [
     ("Camisa", "Vestuário", 59.90, "Entregue"),
     ("Tênis", "Calçados", 199.90, "Cancelado"),
