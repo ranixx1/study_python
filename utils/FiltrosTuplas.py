@@ -1,4 +1,4 @@
-# PRODUTO || CATEGORIA || VALOR || STATUS
+# [PRODUTO || CATEGORIA || VALOR || STATUS] => BASE DE DADOS
 
 pedidos = [
     ("Camisa", "Vestuário", 59.90, "Entregue"),
@@ -10,19 +10,34 @@ pedidos = [
     ("Jaqueta", "Vestuário", 139.90, "Cancelado"),
 ]
 
-# FILTROS
+# Funções de chamada
+def filter_by_category(categoria):
+    for i in pedidos:
+        if categoria == i[1]:
+            print(f"pedido: {i[0]}_____ Valor(R$): {i[2]}")
+    return f"--------Busca completa---------"          
+             
+def filter_by_disponibility(money_real):
+    for i in pedidos:
+        if money_real >= i[2]:
+            print(f"pedido: {i[0]}_____ Valor(R$): {i[2]}")
+    print("Nenhum produto disponível")
+    return f"--------Busca completa---------"          
 
-filtro = input("Digite a categoria que deseja: ")
+def filter_by_status(status):
+    for i in pedidos:
+        if status == i[3]:
+            print(f"pedido:{i[0]}____ Valor(R$):{i[2]}")
+    return f"--------Busca completa---------"          
 
-# FILTRO POR CATEGORIA
-for i in pedidos:
-    if filtro == i[1]:
-        print(f"pedido: {i[0]}_____ Valor: (R$): {i[2]}")
+def return_totalsum():
+    soma = 0
+    for i in pedidos:
+        soma = soma + i[2]
+    return f"Soma total de produtos: {soma:.2f}"
 
-#FILTRO POR VALOR
-quantia = float(input("Digite o valor que possui: "))
-for i in pedidos:
-    if quantia >= i[2]:
-        print(f"opções disponiveis: {i[0]}_____Valor: (R$): {i[2]}")
+def return_qtd():
+    return f"Quantidade total de pedidos: {len(pedidos)}"
 
 
+print(filter_by_disponibility(9))
